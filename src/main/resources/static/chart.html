@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Luban-workbench</title>
+    <meta name="description" content="add page">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/ui.min.css" />
+    <link rel="stylesheet" href="css/ui.datatables.min.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
+
+</head>
+
+<body data-type="chart">
+    <script src="js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+                </div>
+                <!-- 搜索 -->
+                <div class="am-fl tpl-header-search">
+                    <form class="tpl-header-search-form" action="javascript:;">
+                        <button class="tpl-header-search-btn am-icon-search"></button>
+                        <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                    </form>
+                </div>
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                        <!-- 欢迎语 -->
+                        <li class="am-text-sm tpl-header-navbar-welcome">
+                            <a href="javascript:;">欢迎你, <span>admin</span> </a>
+                        </li>
+
+                        <!-- 新邮件 -->
+                        <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-envelope"></i>
+                                <span class="am-badge am-badge-success am-round item-feed-badge">0</span>
+                            </a>
+                            <!-- 弹出列表 -->
+                        </li>
+
+                        <!-- 新提示 -->
+                        <li class="am-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-bell"></i>
+                                <span class="am-badge am-badge-warning am-round item-feed-badge">0</span>
+                            </a>
+
+                            <!-- 弹出列表 -->
+                        </li>
+
+                        <!-- 退出 -->
+                        <li class="am-text-sm">
+                            <a href="javascript:loginOut();">
+                                <span class="am-icon-sign-out"></span> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture">
+                        <img src="img/user04.png" alt="">
+                    </div>
+                    <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+          </span>
+                </div>
+            </div>
+
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="home.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 视频列表
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="add.html">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 新增编目
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="chart.html">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 图表
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="widget-body am-fr">
+                <form class="am-form tpl-form-line-form" accept-charset="UTF-8">
+                    <table>
+                        <tr>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">用户id： </label></td><td><input type="text" id="filter_uid"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">奇谱ID： </label></td><td><input type="text"  id="filter_qipuId"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">标题： </label></td><td><input type="text"  id="filter_title"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">频道： </label></td><td><input type="text"  id="filter_channel"></td>
+                            <td  rowspan="3">
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "  onclick="search()">搜   索</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">生产来源： </label></td><td><input type="text"  id="filter_source"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">审核状态： </label></td><td><input type="text"  id="filter_audit"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">转码状态： </label></td><td><input type="text"  id="filter_release"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">发布状态： </label></td><td><input type="text"  id="filter_publish"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">PGC类型： </label></td><td><input type="text"  id="filter_pgcType"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">开始时间： </label></td><td> <input type="text"  data-am-datepicker="" id="filter_timeFrom"></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">结束时间： </label></td>
+                            <td> <input type="text"  data-am-datepicker="" id="filter_timeTo"></td><td></td><td></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="container-fluid am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 图表</div>
+                    </div>
+            </div>
+
+            <div class="row-content am-cf">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl">折线</div>
+                        <div class="widget-function am-fr">
+                            <a href="javascript:;" class="am-icon-cog"></a>
+                        </div>
+                    </div>
+                    <div class="widget-body am-fr">
+                        <div style="height: 400px"  id="container_1">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl">柱图</div>
+                        <div class="widget-function am-fr">
+                            <a href="javascript:;" class="am-icon-cog"></a>
+                        </div>
+                    </div>
+                    <div class="widget-body am-fr">
+                        <div style="height: 400px" id="container_2">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/ui.min.js"></script>
+    <script src="js/ui.datatables.min.js"></script>
+    <script src="js/dataTables.responsive.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/common.js"></script>
+</body>
+<script type="text/javascript">
+    var dom1 = document.getElementById("container_1");
+    var dom2 = document.getElementById("container_2");
+    var myChart1 = echarts.init(dom1);
+    var myChart2 = echarts.init(dom2);
+    var app = {};
+    option1 = null;
+    option2 = null;
+    option1 = {
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'line'
+        }]
+    };
+    option2 = {
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar'
+        }]
+    };
+    if (option1 && typeof option1 === "object") {
+        myChart1.setOption(option1, true);
+    }
+    if (option2 && typeof option2 === "object") {
+        myChart2.setOption(option2, true);
+    }
+    function search() {
+        // var title = $("#filter_title").val();
+        // var uid = $("#filter_uid").val();
+        // var qipuId = $("#filter_qipuId").val();
+        // var channelId = $("#filter_channelId").val();
+        // var source = $("#filter_source").val();
+        // var pgcType = $("#filter_pgcType").val();
+        // var releaseStatus = $("#filter_release").val();
+        // var auditStatus = $("#filter_audit").val();
+        // var publishStatus = $("#filter_publish").val();
+        // var createTimeFrom = $("#filter_timeFrom").val();
+        // var createTimeTo = $("#filter_timeTo").val();
+        //
+        // var requestUrl = videoListUrl;
+        // if (title != "")
+        //     requestUrl += "displayName=" + title;
+        // if (uid != "")
+        //     requestUrl += "&uid=" + uid;
+        // if (qipuId != "")
+        //     requestUrl += "&qipuId=" + qipuId;
+        // if (channelId != "")
+        //     requestUrl += "&channelId=" + channelId;
+        // if (source != "")
+        //     requestUrl += "&sourceProvider=" + source;
+        // if (pgcType != "")
+        //     requestUrl += "&pgcType=" + pgcType;
+        // if (releaseStatus != "")
+        //     requestUrl += "&releaseStatus=" + releaseStatus;
+        // if (auditStatus != "")
+        //     requestUrl += "&auditStatus=" + auditStatus;
+        // if (publishStatus != "")
+        //     requestUrl += "&publishStatus=" + publishStatus;
+        // if (createTimeFrom != "")
+        //     requestUrl += "&createStartTime=" + createTimeFrom;
+        // if (createTimeTo != "")
+        //     requestUrl += "&createEndTime=" + createTimeTo;
+        var self=this;
+        $.ajax({
+            type : "get",
+            dataType : "json",
+            contentType : "application/json",
+            url : "/chart",
+            success : function(json) {
+                alert(json);
+                self.option=json;
+            },
+            error : function(json) {
+                alert("加载失败");
+            }
+        });
+    }
+</script>
+</html>
