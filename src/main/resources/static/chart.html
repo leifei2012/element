@@ -258,41 +258,6 @@
         myChart2.setOption(option2, true);
     }
     function search() {
-        // var title = $("#filter_title").val();
-        // var uid = $("#filter_uid").val();
-        // var qipuId = $("#filter_qipuId").val();
-        // var channelId = $("#filter_channelId").val();
-        // var source = $("#filter_source").val();
-        // var pgcType = $("#filter_pgcType").val();
-        // var releaseStatus = $("#filter_release").val();
-        // var auditStatus = $("#filter_audit").val();
-        // var publishStatus = $("#filter_publish").val();
-        // var createTimeFrom = $("#filter_timeFrom").val();
-        // var createTimeTo = $("#filter_timeTo").val();
-        //
-        // var requestUrl = videoListUrl;
-        // if (title != "")
-        //     requestUrl += "displayName=" + title;
-        // if (uid != "")
-        //     requestUrl += "&uid=" + uid;
-        // if (qipuId != "")
-        //     requestUrl += "&qipuId=" + qipuId;
-        // if (channelId != "")
-        //     requestUrl += "&channelId=" + channelId;
-        // if (source != "")
-        //     requestUrl += "&sourceProvider=" + source;
-        // if (pgcType != "")
-        //     requestUrl += "&pgcType=" + pgcType;
-        // if (releaseStatus != "")
-        //     requestUrl += "&releaseStatus=" + releaseStatus;
-        // if (auditStatus != "")
-        //     requestUrl += "&auditStatus=" + auditStatus;
-        // if (publishStatus != "")
-        //     requestUrl += "&publishStatus=" + publishStatus;
-        // if (createTimeFrom != "")
-        //     requestUrl += "&createStartTime=" + createTimeFrom;
-        // if (createTimeTo != "")
-        //     requestUrl += "&createEndTime=" + createTimeTo;
         var self=this;
         $.ajax({
             type : "get",
@@ -301,7 +266,10 @@
             url : "/chart",
             success : function(json) {
                 alert(json);
-                self.option=json;
+                self.option1=json;
+                self.option2=json;
+                myChart1.setOption(option1, true);
+                myChart2.setOption(option2, true);
             },
             error : function(json) {
                 alert("加载失败");
