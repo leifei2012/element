@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 
+import com.example.demo.service.Service_String;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,23 +48,15 @@ public class test {
 
     @RequestMapping("/test")
     public String testmethod(){
-        return "chart.html";
+        return "table.html";
     }
 
     @RequestMapping("/p")
     @ResponseBody
-    public List p(String time){
-        List l= new ArrayList();
-        Map<String,String> m=new HashMap<>();
-        m.put("name","22");
-        m.put("take","22");
-        m.put("Time","22");
-        l.add(m);
-        Map<String,Object> m_all=new HashMap<>();
-        m_all.put("pagenum","5");
-        m_all.put("data",l);
-        System.out.println(time);
-        return l;
+    public String p(){
+        Service_String Service_String=new Service_String();
+        System.out.println(Service_String.string());
+        return Service_String.string();
     }
 
     @RequestMapping("/q")
