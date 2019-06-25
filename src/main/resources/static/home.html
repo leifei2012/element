@@ -11,387 +11,386 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <script src="assets/js/echarts.min.js"></script>
-    <link rel="stylesheet" href="assets/css/ui.min.css" />
-    <link rel="stylesheet" href="assets/css/ui.datatables.min.css" />
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/ui.min.css" />
+    <link rel="stylesheet" href="css/ui.datatables.min.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
 
 </head>
 
 <body data-type="widgets">
-    <script src="assets/js/theme.js"></script>
-    <div class="am-g tpl-g">
-        <!-- 头部 -->
-        <header>
-            <!-- logo -->
-            <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
-            </div>
-            <!-- 右侧内容 -->
-            <div class="tpl-header-fluid">
-                <!-- 侧边切换 -->
-                <div class="am-fl tpl-header-switch-button am-icon-list">
+<script src="js/theme.js"></script>
+<div class="am-g tpl-g">
+    <!-- 头部 -->
+    <header>
+        <!-- logo -->
+        <div class="am-fl tpl-header-logo">
+            <a href="javascript:;"><img src="img/logo.png" alt=""></a>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="tpl-header-fluid">
+            <!-- 侧边切换 -->
+            <div class="am-fl tpl-header-switch-button am-icon-list">
                     <span>
 
                 </span>
-                </div>
-                <!-- 搜索 -->
-                <div class="am-fl tpl-header-search">
-                    <form class="tpl-header-search-form" action="javascript:;">
-                        <button class="tpl-header-search-btn am-icon-search"></button>
-                        <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-                    </form>
-                </div>
-                <!-- 其它功能-->
-                <div class="am-fr tpl-header-navbar">
-                    <ul>
-                        <!-- 欢迎语 -->
-                        <li class="am-text-sm tpl-header-navbar-welcome">
-                            <a href="javascript:;">欢迎你, <span>admin</span> </a>
-                        </li>
-
-                        <!-- 新邮件 -->
-                        <li class="am-dropdown tpl-dropdown" data-am-dropdown>
-                            <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
-                                <i class="am-icon-envelope"></i>
-                                <span class="am-badge am-badge-success am-round item-feed-badge">0</span>
-                            </a>
-                            <!-- 弹出列表 -->
-                        </li>
-
-                        <!-- 新提示 -->
-                        <li class="am-dropdown" data-am-dropdown>
-                            <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
-                                <i class="am-icon-bell"></i>
-                                <span class="am-badge am-badge-warning am-round item-feed-badge">0</span>
-                            </a>
-
-                            <!-- 弹出列表 -->
-                        </li>
-
-                        <!-- 退出 -->
-                        <li class="am-text-sm">
-                            <a href="javascript:loginOut();">
-                                <span class="am-icon-sign-out"></span> 退出
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-
-        </header>
-        <!-- 风格切换 -->
-        <div class="tpl-skiner">
-            <div class="tpl-skiner-toggle am-icon-cog">
+            <!-- 搜索 -->
+            <div class="am-fl tpl-header-search">
+                <form class="tpl-header-search-form" action="javascript:;">
+                    <button class="tpl-header-search-btn am-icon-search"></button>
+                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                </form>
             </div>
-            <div class="tpl-skiner-content">
-                <div class="tpl-skiner-content-title">
-                    选择主题
-                </div>
-                <div class="tpl-skiner-content-bar">
-                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
-                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
-                </div>
+            <!-- 其它功能-->
+            <div class="am-fr tpl-header-navbar">
+                <ul>
+                    <!-- 欢迎语 -->
+                    <li class="am-text-sm tpl-header-navbar-welcome">
+                        <a href="javascript:;">欢迎你, <span>admin</span> </a>
+                    </li>
+
+                    <!-- 新邮件 -->
+                    <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-envelope"></i>
+                            <span class="am-badge am-badge-success am-round item-feed-badge">0</span>
+                        </a>
+                        <!-- 弹出列表 -->
+                    </li>
+
+                    <!-- 新提示 -->
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-bell"></i>
+                            <span class="am-badge am-badge-warning am-round item-feed-badge">0</span>
+                        </a>
+
+                        <!-- 弹出列表 -->
+                    </li>
+
+                    <!-- 退出 -->
+                    <li class="am-text-sm">
+                        <a href="javascript:loginOut();">
+                            <span class="am-icon-sign-out"></span> 退出
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- 侧边导航栏 -->
-        <div class="left-sidebar">
-            <!-- 用户信息 -->
-            <div class="tpl-sidebar-user-panel">
-                <div class="tpl-user-panel-slide-toggleable">
-                    <div class="tpl-user-panel-profile-picture">
-                        <img src="assets/img/user04.png" alt="">
-                    </div>
-                    <span class="user-panel-logged-in-text">
+
+    </header>
+    <!-- 风格切换 -->
+    <div class="tpl-skiner">
+        <div class="tpl-skiner-toggle am-icon-cog">
+        </div>
+        <div class="tpl-skiner-content">
+            <div class="tpl-skiner-content-title">
+                选择主题
+            </div>
+            <div class="tpl-skiner-content-bar">
+                <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                <span class="skiner-color skiner-black" data-color="theme-black"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边导航栏 -->
+    <div class="left-sidebar">
+        <!-- 用户信息 -->
+        <div class="tpl-sidebar-user-panel">
+            <div class="tpl-user-panel-slide-toggleable">
+                <div class="tpl-user-panel-profile-picture">
+                    <img src="img/user04.png" alt="">
+                </div>
+                <span class="user-panel-logged-in-text">
                           <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
                           admin
                     </span>
-                </div>
             </div>
-
-            <!-- 菜单 -->
-            <ul class="sidebar-nav">
-                <li class="sidebar-nav-link">
-                    <a href="home.html">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 视频列表
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="add.html">
-                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 新增编目
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="chart.html">
-                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 图表
-                    </a>
-                </li>
-            </ul>
         </div>
 
+        <!-- 菜单 -->
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-link">
+                <a href="home.html">
+                    <i class="am-icon-table sidebar-nav-link-logo"></i> 视频列表
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="add.html">
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 新增编目
+                </a>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="chart.html">
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 图表
+                </a>
+            </li>
+        </ul>
+    </div>
 
-        <!-- 内容区域 -->
-        <div class="tpl-content-wrapper">
-            <div class="row-content am-cf">
-                <div class="row">
-                    <div class="widget-body am-fr">
-                        <form class="am-form tpl-form-line-form" accept-charset="UTF-8">
-                            <table>
-                                <tr>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">统计类型： </label></td><td><select data-am-selected="{searchBox: 1}" style="display: none;">
-                                    <option value="0">每天</option>
-                                    <option value="1">每15分钟</option>
-                                </select></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">奇谱ID： </label></td><td><input type="text"  id="filter_qipuId"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">标题： </label></td><td><input type="text"  id="filter_title"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">频道： </label></td><td><input type="text"  id="filter_channel"></td>
-                                    <td  rowspan="3">
-                                        <div class="am-form-group">
-                                            <div class="am-u-sm-9 am-u-sm-push-3">
-                                                <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "  onclick="search()">搜   索</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">生产来源： </label></td><td><input type="text"  id="filter_source"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">审核状态： </label></td><td><input type="text"  id="filter_audit"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">转码状态： </label></td><td><input type="text"  id="filter_release"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">发布状态： </label></td><td><input type="text"  id="filter_publish"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">PGC类型： </label></td><td><input type="text"  id="filter_pgcType"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">创建时间： </label></td><td> <input type="text"  data-am-datepicker="" id="filter_timeFrom"></td>
-                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">至： </label></td>
-                                    <td> <input type="text"  data-am-datepicker="" id="filter_timeTo"></td><td></td><td></td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                    <br>
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-                        <table id="sample-table-2" class="am-table am-table-compact am-table-striped tpl-table-black ">
-                            <thead>
+
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div class="row">
+                <div class="widget-body am-fr">
+                    <form class="am-form tpl-form-line-form" accept-charset="UTF-8">
+                        <table>
                             <tr>
-                                <th>用户Id</th>
-                                <th>奇谱Id</th>
-                                <th>标题</th>
-                                <!--<th>描述</th>
-                                <th>封面图</th>-->
-                                <th>频道</th>
-                                <th>生产来源</th>
-                                <th>Pgc类型</th>
-                                <th>审核状态</th>
-                                <th>转码状态</th>
-                                <th>发布状态</th>
-                                <th>创建时间</th>
-                                <th>操作</th>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">统计类型： </label></td><td><select data-am-selected="{searchBox: 1}" style="display: none;">
+                                <option value="0">每天</option>
+                                <option value="1">每15分钟</option>
+                            </select></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">ID： </label></td><td><input type="text"  id="filter_qipuId"></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">创建时间： </label></td><td> <input type="text"  data-am-datepicker="" id="filter_timeFrom"></td>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">结束时间： </label></td><td> <input type="text"  data-am-datepicker="" id="filter_timeTo"></td><td>
+                                <td  rowspan="3">
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "  onclick="search()">搜   索</button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
-                            </thead>
+                            <tr>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">PGC类型： </label></td><td><input type="text"  id="filter_pgcType"></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">标题： </label></td><td><input type="text"  id="filter_title"></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><label for="user-name" class="am-u-sm-3 am-form-label" style="width: 100px">频道： </label></td><td><input type="text"  id="filter_channel"></td>
+                                </td><td></td>
+                            </tr>
                         </table>
-                    </div>
+                    </form>
+                </div>
+                <br>
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <table id="sample-table-2" class="am-table am-table-compact am-table-striped tpl-table-black ">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>报告时间</th>
+                            <th>种类</th>
+                            <th>发布中</th>
+                            <th>发布失败</th>
+                            <th>音频生产中</th>
+                            <th>转码中</th>
+                            <th>转码失败</th>
+                            <th>图片生产中</th>
+                            <th>图片生产失败</th>
+                            <th>待反显</th>
+                            <th>反显中</th>
+                            <th>反显失败</th>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    <script src="assets/js/ui.min.js"></script>
-    <script src="assets/js/ui.datatables.min.js"></script>
-    <script src="assets/js/dataTables.responsive.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/common.js"></script>
-    <script type="text/javascript">
-        jQuery(function ($) {
-            if(!authenticate()) return;
-            var requestUrl = videoListUrl;
-            initTable(requestUrl);
-        });
+</div>
+</div>
+<script src="js/ui.min.js"></script>
+<script src="js/ui.datatables.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        var requestUrl = videoListUrl;
+        initTable(requestUrl);
+    });
 
-        function initTable(requestUrl) {
-            //初始化table
-            var table = $('#sample-table-2')
-                .dataTable(
-                    {
-                        "bPaginate": true,//分页工具条显示
-                        //"sPaginationType" : "full_numbers",//分页工具条样式
-                        //"bStateSave" : true, //是否打开客户端状态记录功能,此功能在ajax刷新纪录的时候不会将个性化设定回复为初始化状态
-                        "bScrollCollapse": true, //当显示的数据不足以支撑表格的默认的高度
-                        "bLengthChange": true, //每页显示的记录数
-                        "bFilter": false, //搜索栏
-                        "bSort": true, //是否支持排序功能
-                        "bInfo": true, //显示表格信息
-                        "bAutoWidth": true, //自适应宽度
-                        "bJQueryUI": false,//是否开启主题
-                        "bDestroy": true,
-                        "bProcessing": true, //开启读取服务器数据时显示正在加载中……特别是大数据量的时候，开启此功能比较好
-                        "bServerSide": true,//服务器处理分页，默认是false，需要服务器处理，必须true
-                        "sAjaxDataProp": "aData",//是服务器分页的标志，必须有
-                        "sAjaxSource": requestUrl,//通过ajax实现分页的url路径
-                        "sScrollY": "100%",
-                        "fnInitComplete": function () {
-                            this.fnAdjustColumnSizing(true);
+    function initTable(requestUrl) {
+        //初始化table
+        var table = $('#sample-table-2')
+            .dataTable(
+                {
+                    "bPaginate": true,//分页工具条显示
+                    //"sPaginationType" : "full_numbers",//分页工具条样式
+                    //"bStateSave" : true, //是否打开客户端状态记录功能,此功能在ajax刷新纪录的时候不会将个性化设定回复为初始化状态
+                    "bScrollCollapse": true, //当显示的数据不足以支撑表格的默认的高度
+                    "bLengthChange": true, //每页显示的记录数
+                    "bFilter": false, //搜索栏
+                    "bSort": true, //是否支持排序功能
+                    "bInfo": true, //显示表格信息
+                    "bAutoWidth": true, //自适应宽度
+                    "bJQueryUI": false,//是否开启主题
+                    "bDestroy": true,
+                    "bProcessing": true, //开启读取服务器数据时显示正在加载中……特别是大数据量的时候，开启此功能比较好
+                    "bServerSide": true,//服务器处理分页，默认是false，需要服务器处理，必须true
+                    "sAjaxDataProp": "aData",//是服务器分页的标志，必须有
+                    "sAjaxSource": requestUrl,//通过ajax实现分页的url路径
+                    "sScrollY": "100%",
+                    "fnInitComplete": function () {
+                        this.fnAdjustColumnSizing(true);
+                    },
+                    "aoColumns": [//初始化要显示的列
+                        // {
+                        //     "mData": "id"
+                        // },
+                        // {
+                        //     "mData": "reportTime"
+                        // },
+                        {
+                            "mDataProp": "id"
                         },
-                        "aoColumns": [//初始化要显示的列
-                            {
-                                "mData": "uid"
-                            },
-                            {
-                                "mData": "qipuId"
-                            },
-                            {
-                                "mDataProp": "displayName"
-                            },
-                            // {
-                            //     "mDataProp" : "description"
-                            // },
-                            // {
-                            //     "mDataProp" : "coverImage"
-                            // },
-                            {
-                                "mDataProp": "channelId"
-                            },
-                            {
-                                "mDataProp": "source"
-                            },
-                            {
-                                "mDataProp": "pgcType"
-                            },
-                            {
-                                "mDataProp": "auditStatus"
-                            },
-                            {
-                                "mDataProp": "releaseStatus"
-                            }, {
-                                "mDataProp": "publishStatus"
-                            },
-                            {
-                                "mDataProp": "createTime"
-                            },
-                            {
-                                // 这里是编辑和删除两个按钮的书写方式。
-                                "data": function (obj) {
-                                    var qipuId = obj.qipuId;
-                                    var uid = obj.uid;
-                                    return '<div class="tpl-table-black-operation">\n' +
-                                        '                                                        <a href="javascript:editVideo(' + qipuId + ');">\n' +
-                                        '                                                            <i class="am-icon-pencil"></i> 编辑\n' +
-                                        '                                                        </a>\n' +
-                                        '                                                        <a href="javascript:deleteVideo(' + uid + ',' + qipuId + ')" class="tpl-table-black-operation-del">\n' +
-                                        '                                                            <i class="am-icon-trash"></i> 删除\n' +
-                                        '                                                        </a>\n' +
-                                        '                                                    </div>'
-                                }
-                            }],
-                        "oLanguage": {//语言设置
-                            "sProcessing": "处理中...",
-                            "sLengthMenu": "显示 _MENU_ 项结果",
-                            "sZeroRecords": "没有匹配结果",
-                            "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-                            "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
-                            "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
-                            "sInfoPostFix": "",
-                            "sSearch": "搜索:",
-                            "sUrl": "",
-                            "sEmptyTable": "表中数据为空",
-                            "sLoadingRecords": "载入中...",
-                            "sInfoThousands": ",",
-                            "oPaginate": {
-                                "sFirst": "首页",
-                                "sPrevious": "上页",
-                                "sNext": "下页",
-                                "sLast": "末页"
-                            },
-                            "oAria": {
-                                "sSortAscending": ": 以升序排列此列",
-                                "sSortDescending": ": 以降序排列此列"
+                        {
+                            "mDataProp" : "data"
+                        },
+                        {
+                            "mDataProp" : "reportType"
+                        },
+                        {
+                            "mDataProp": "publishProcessing"
+                        },
+                        {
+                            "mDataProp": "publishFailed"
+                        },
+                        {
+                            "mDataProp": "auditProcessing"
+                        },
+                        {
+                            "mDataProp": "releaseProcessing"
+                        },
+                        {
+                            "mDataProp": "releasesFailed"
+                        },
+                        {
+                            "mDataProp": "imageProcessing"
+                        },
+                        {
+                            "mDataProp": "imageFailed"
+                        },
+                        {
+                            "mDataProp": "reversePreProcess"
+                        },
+                        {
+                            "mDataProp": "reverseProcessing"
+                        },
+                        {
+                            "mDataProp": "reverseFailed"
+                        },
+                        {
+                            // 这里是编辑和删除两个按钮的书写方式。
+                            "data": function (obj) {
+                                var qipuId = obj.qipuId;
+                                var uid = obj.uid;
+                                return '<div class="tpl-table-black-operation">\n' +
+                                    '                                                        <a href="javascript:editVideo(' + qipuId + ');">\n' +
+                                    '                                                            <i class="am-icon-pencil"></i> 编辑\n' +
+                                    '                                                        </a>\n' +
+                                    '                                                        <a href="javascript:deleteVideo(' + uid + ',' + qipuId + ')" class="tpl-table-black-operation-del">\n' +
+                                    '                                                            <i class="am-icon-trash"></i> 删除\n' +
+                                    '                                                        </a>\n' +
+                                    '                                                    </div>'
                             }
+                        }],
+                    "oLanguage": {//语言设置
+                        "sProcessing": "处理中...",
+                        "sLengthMenu": "显示 _MENU_ 项结果",
+                        "sZeroRecords": "没有匹配结果",
+                        "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+                        "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                        "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                        "sInfoPostFix": "",
+                        "sSearch": "搜索:",
+                        "sUrl": "",
+                        "sEmptyTable": "表中数据为空",
+                        "sLoadingRecords": "载入中...",
+                        "sInfoThousands": ",",
+                        "oPaginate": {
+                            "sFirst": "首页",
+                            "sPrevious": "上页",
+                            "sNext": "下页",
+                            "sLast": "末页"
                         },
-                    });
+                        "oAria": {
+                            "sSortAscending": ": 以升序排列此列",
+                            "sSortDescending": ": 以降序排列此列"
+                        }
+                    },
+                });
+    }
+
+    function search() {
+        var title = $("#filter_title").val();
+        var uid = $("#filter_uid").val();
+        var qipuId = $("#filter_qipuId").val();
+        var channelId = $("#filter_channelId").val();
+        var source = $("#filter_source").val();
+        var pgcType = $("#filter_pgcType").val();
+        var releaseStatus = $("#filter_release").val();
+        var auditStatus = $("#filter_audit").val();
+        var publishStatus = $("#filter_publish").val();
+        var createTimeFrom = $("#filter_timeFrom").val();
+        var createTimeTo = $("#filter_timeTo").val();
+
+        var requestUrl = videoListUrl;
+        if (title != "")
+            requestUrl += "displayName=" + title;
+        if (uid != "")
+            requestUrl += "&uid=" + uid;
+        if (qipuId != "")
+            requestUrl += "&qipuId=" + qipuId;
+        if (channelId != "")
+            requestUrl += "&channelId=" + channelId;
+        if (source != "")
+            requestUrl += "&sourceProvider=" + source;
+        if (pgcType != "")
+            requestUrl += "&pgcType=" + pgcType;
+        if (releaseStatus != "")
+            requestUrl += "&releaseStatus=" + releaseStatus;
+        if (auditStatus != "")
+            requestUrl += "&auditStatus=" + auditStatus;
+        if (publishStatus != "")
+            requestUrl += "&publishStatus=" + publishStatus;
+        if (createTimeFrom != "")
+            requestUrl += "&createStartTime=" + createTimeFrom;
+        if (createTimeTo != "")
+            requestUrl += "&createEndTime=" + createTimeTo;
+
+        var table = $('#paymentlist').dataTable();
+        if (table) {
+            table.fnClearTable(); //清空一下table
+            table.fnDestroy(); //还原初始化了的datatable
         }
+        initTable(requestUrl);
+    }
 
-        function search() {
-            var title = $("#filter_title").val();
-            var uid = $("#filter_uid").val();
-            var qipuId = $("#filter_qipuId").val();
-            var channelId = $("#filter_channelId").val();
-            var source = $("#filter_source").val();
-            var pgcType = $("#filter_pgcType").val();
-            var releaseStatus = $("#filter_release").val();
-            var auditStatus = $("#filter_audit").val();
-            var publishStatus = $("#filter_publish").val();
-            var createTimeFrom = $("#filter_timeFrom").val();
-            var createTimeTo = $("#filter_timeTo").val();
-
-            var requestUrl = videoListUrl;
-            if (title != "")
-                requestUrl += "displayName=" + title;
-            if (uid != "")
-                requestUrl += "&uid=" + uid;
-            if (qipuId != "")
-                requestUrl += "&qipuId=" + qipuId;
-            if (channelId != "")
-                requestUrl += "&channelId=" + channelId;
-            if (source != "")
-                requestUrl += "&sourceProvider=" + source;
-            if (pgcType != "")
-                requestUrl += "&pgcType=" + pgcType;
-            if (releaseStatus != "")
-                requestUrl += "&releaseStatus=" + releaseStatus;
-            if (auditStatus != "")
-                requestUrl += "&auditStatus=" + auditStatus;
-            if (publishStatus != "")
-                requestUrl += "&publishStatus=" + publishStatus;
-            if (createTimeFrom != "")
-                requestUrl += "&createStartTime=" + createTimeFrom;
-            if (createTimeTo != "")
-                requestUrl += "&createEndTime=" + createTimeTo;
-
-            var table = $('#paymentlist').dataTable();
-            if (table) {
-                table.fnClearTable(); //清空一下table
-                table.fnDestroy(); //还原初始化了的datatable
-            }
-            initTable(requestUrl);
-        }
-
-        function deleteVideo(uid, qipuId) {
-            var deleteUrl = videoDeleteUrl + "/" + qipuId + "?uid=" + uid;
-            $.ajax({
-                async: false,
-                type: "DELETE",
-                url: deleteUrl,
-                contentType: "application/json",
-                success: function (data) {
-                    if (data && data.code == "A00000"){
-                        alert("删除成功");
-                        initTable(videoListUrl);
-                    }
-                    else
-                        alert("删除失败");
-                },
-                error: function (e) {
-                    alert("操作失败");
+    function deleteVideo(uid, qipuId) {
+        var deleteUrl = videoDeleteUrl + "/" + qipuId + "?uid=" + uid;
+        $.ajax({
+            async: false,
+            type: "DELETE",
+            url: deleteUrl,
+            contentType: "application/json",
+            success: function (data) {
+                if (data && data.code == "A00000"){
+                    alert("删除成功");
+                    initTable(videoListUrl);
                 }
-            })
-        }
+                else
+                    alert("删除失败");
+            },
+            error: function (e) {
+                alert("操作失败");
+            }
+        })
+    }
 
-        function editVideo(qipuId) {
-            sessionStorage.setItem("editQipuId", qipuId);
-            window.location.href = "edit.html";
-        }
+    function editVideo(qipuId) {
+        sessionStorage.setItem("editQipuId", qipuId);
+        window.location.href = "edit.html";
+    }
 
-    </script>
+</script>
 </body>
 </html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>roroto</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/ui.min.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="//unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+</head>
+
+<body data-type="widgets">
+<script src="js/theme.js"></script>
+<div class="am-g tpl-g">
+    <!-- 头部 -->
+    <header>
+        <!-- logo -->
+        <div class="am-fl tpl-header-logo">
+            <a href="javascript:;"><img src="img/logo.png" alt=""></a>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="tpl-header-fluid">
+            <!-- 侧边切换 -->
+            <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+            </div>
+            <!-- 搜索 -->
+            <div class="am-fl tpl-header-search">
+                <form class="tpl-header-search-form" action="javascript:;">
+                    <button class="tpl-header-search-btn am-icon-search"></button>
+                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                </form>
+            </div>
+            <!-- 其它功能-->
+            <div class="am-fr tpl-header-navbar">
+                <ul>
+                    <!-- 欢迎语 -->
+                    <li class="am-text-sm tpl-header-navbar-welcome">
+                        <a href="javascript:;">欢迎你, <span>admin</span> </a>
+                    </li>
+
+                    <!-- 新邮件 -->
+                    <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-envelope"></i>
+                            <span class="am-badge am-badge-success am-round item-feed-badge">0</span>
+                        </a>
+                        <!-- 弹出列表 -->
+                    </li>
+
+                    <!-- 新提示 -->
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                            <i class="am-icon-bell"></i>
+                            <span class="am-badge am-badge-warning am-round item-feed-badge">0</span>
+                        </a>
+
+                        <!-- 弹出列表 -->
+                    </li>
+
+                    <!-- 退出 -->
+                    <li class="am-text-sm">
+                        <a href="javascript:loginOut();">
+                            <span class="am-icon-sign-out"></span> 退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <!-- 风格切换 -->
+    <div class="tpl-skiner">
+        <div class="tpl-skiner-toggle am-icon-cog">
+        </div>
+        <div class="tpl-skiner-content">
+            <div class="tpl-skiner-content-title">
+                选择主题
+            </div>
+            <div class="tpl-skiner-content-bar">
+                <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                <span class="skiner-color skiner-black" data-color="theme-black"></span>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边导航栏 -->
+    <div class="left-sidebar">
+        <!-- 用户信息 -->
+        <div class="tpl-sidebar-user-panel">
+            <div class="tpl-user-panel-slide-toggleable">
+                <div class="tpl-user-panel-profile-picture">
+                    <img src="img/user04.png" alt="">
+                </div>
+                <span class="user-panel-logged-in-text">
+                          <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                          admin
+                    </span>
+            </div>
+        </div>
+
+        <!-- 菜单 -->
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title active">
+                    <i class="am-icon-table sidebar-nav-link-logo"></i> 审核监控
+                    <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico sidebar-nav-sub-ico-rotate"></span>
+                </a>
+                <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
+                    <li class="sidebar-nav-link">
+                        <a href="totoro_table.html" class="sub-active">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+                        </a>
+                    </li>
+
+                    <li class="sidebar-nav-link">
+                        <a href="totoro_chart.html">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-nav-link">
+                <a href="javascript:;" class="sidebar-nav-sub-title">
+                    <i class="am-icon-table sidebar-nav-link-logo"></i> 生产监控
+                    <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico sidebar-nav-sub-ico-rotate"></span>
+                </a>
+                <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
+                    <li class="sidebar-nav-link">
+                        <a href="totoro_process_table.html">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+                        </a>
+                    </li>
+
+                    <li class="sidebar-nav-link">
+                        <a href="totoro_chart.html">
+                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 内容区域 -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div id="app" class="form">
+                <el-form :model="form" ref="form" label-width="100px" class="demo-ruleForm">
+                    <el-form-item label="类型">
+                        <el-select v-model="form.reportType"  placeholder="请选择类型">
+                            <el-option label="每15分钟" value="1"></el-option>
+                            <el-option label="每天" value="0"></el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="时间" required>
+                        <el-col :span="5">
+                            <el-form-item prop="startTime">
+                                <el-date-picker type="datetime" default-time="12:00:00"   format="yyyy-MM-dd HH:mm" placeholder="开始时间" v-model="form.startTime" style="width: 100%;"></el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                        <el-col class="line" :span="0.5">-</el-col>
+                        <el-col :span="5">
+                            <el-form-item prop="endTime">
+                                <el-date-picker type="datetime" default-time="12:00:00"   format="yyyy-MM-dd HH:mm" placeholder="结束时间（默认显示前五天数据）" v-model="form.endTime" style="width: 100%;"></el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                    </el-form-item>
+                    <el-form-item class="button">
+                        <el-button type="primary" @click="submitForm('form')">提交</el-button>
+                        <el-button @click="resetForm('form')">重置</el-button>
+                    </el-form-item>
+                </el-form>
+                <div class="table">
+                    <el-table :data="tableData" style="width: 100%" :default-sort = "{prop: 'id', order: 'Ascending'}" >
+                        <el-table-column  prop="id" label="id" width="100" sortable>
+                            <template slot-scope="scope">
+                                <el-popover trigger="hover" placement="top">
+                                    <p>id: {{ scope.row.id }}</p>
+                                    <div slot="reference" >
+                                        <el-tag size="medium">{{ scope.row.id }}</el-tag>
+                                    </div>
+                                </el-popover>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="reportTime" label="报告时间" width="180" sortable >
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.reportTime }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="reportType" label="种类" width="80" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-check"></i>
+                                <span>{{ scope.row.reportType }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="publishProcessing" label="发布中" width="80" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-loading"></i>
+                                <span>{{ scope.row.publishProcessing }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="publishFailed" label="发布失败" width="80" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.publishFailed }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="auditProcessing" label="音频生产中" width="80" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-loading"></i>
+                                <span>{{ scope.row.auditProcessing }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="releaseProcessing" label="转码中" width="80" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-loading"></i>
+                                <span>{{ scope.row.releaseProcessing }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="releasesFailed" label="转码失败" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.releasesFailed }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="imageProcessing" label="图片生产中" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-loading"></i>
+                                <span>{{ scope.row.imageProcessing }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="imageFailed" label="图片生产失败" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.imageFailed }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="reversePreProcess" label="待反显" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.reversePreProcess }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="reverseProcessing" label="反显中" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-refresh"></i>
+                                <span>{{ scope.row.reverseProcessing }}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column  prop="reverseFailed" label="反显失败" width="100" sortable>
+                            <template slot-scope="scope">
+                                <i class="el-icon-time"></i>
+                                <span>{{ scope.row.reverseFailed }}</span>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div class="page">
+                    <el-col :span="24" class="toolbar pageBar">
+                        <el-pagination
+                                background
+                                layout=" prev, pager, next, sizes, total"
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :page-sizes="[10, 20, 30, 40]"
+                                :current-page="page.currentPage"
+                                :page-size="page.pageSize"
+                                :page-count="page.totalPages">
+                        </el-pagination>
+                    </el-col>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/ui.min.js"></script>
+<script src="js/ui.datatables.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            form:{
+                startTime:'',
+                endTime:'',
+                id:'',
+                reportType:'0'
+            },
+            tableData:[],
+            page:{
+                currentPage: 1,
+                pageSize:0,
+                pageNo:0,
+                totalPages:0
+            },
+        },
+        created: function(){
+            this.getTableData()
+        },
+        methods:{
+            getTime(date){
+                this.value = date;
+            },
+            getTableData:function(){
+                var self = this;
+                $.ajax({
+                    type : "get",
+                    dataType : "json",
+                    contentType : "application/json",
+                    url : "http://127.0.0.1:8089/api/v1/monitor/search",
+                    success : function(json) {
+                        self.tableData=json.data.result;
+                        console.log(json.data.totalPages);
+                        self.page.pageSize=json.data.pageSize;
+                        self.page.pageNo=json.data.pageNo;
+                        self.page.totalPages=json.data.totalPages;
+                    },
+                });
+            },
+            submitForm(formName) {
+                var self = this;  //很重要
+                this.$refs[formName].validate((valid) => {
+                    if (valid) {
+                        var str={"startTime":self.form.startTime,"endTime":self.form.endTime,"reportType":self.form.reportType};
+                        console.log(str);
+                        $.ajax({
+                            type : "get",
+                            dataType : "json",
+                            data: str,
+                            contentType : "application/json",
+                            url : "http://127.0.0.1:8089/api/v1/monitor/search",
+                            success : function(json) {
+                                self.tableData=json.data.result;
+                                console.log(self.tableData.length);
+                                self.page.pageSize=json.data.pageSize;
+                                self.page.pageNo=json.data.pageNo;
+                                self.page.totalPages=json.data.totalPages;
+                            },
+                            error : function(json) {
+                                alert("加载失败");
+                            }
+                        });
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            },
+            getUser: function () {
+                var self = this;
+                var str={"startTime":self.form.startTime,"endTime":self.form.endTime,"reportType":self.form.reportType,
+                    "pageNo":self.page.pageNo,"pageSize":self.page.pageSize};
+                $.ajax({
+                    type : "get",
+                    dataType : "json",
+                    data: str,
+                    contentType : "application/json",
+                    url : "http://127.0.0.1:8089/api/v1/monitor/search",
+                    success : function(json) {
+                        self.tableData=json.data.result;
+                        console.log(self.tableData);
+                        self.page.pageSize=json.data.pageSize;
+                        self.page.pageNo=json.data.pageNo;
+                        self.page.totalPages=json.data.totalPages;
+                    },
+                    error : function(json) {
+                        alert("加载失败");
+                    }
+                });
+            },
+            //api/v1/monitor/searchageSize改变时
+            handleSizeChange(val) {
+                this.page.pageSize = val;
+                this.getUser();
+            },
+            //currentPage改变时
+            handleCurrentChange(val) {
+                this.page.pageNo = val;
+                this.getUser();
+            },
+
+            handleEdit(index, row) {
+                console.log(index, row.name);
+            },
+            handleDelete(index, row) {
+                console.log(index, row);
+            }
+        }
+    })
+</script>
+<style>
+    .button{
+        margin-right: 20px;
+        float:right;
+    }
+    .page{
+        margin-top: 10px;
+        float:right;
+    }
+</style>
+</body>
+</html>

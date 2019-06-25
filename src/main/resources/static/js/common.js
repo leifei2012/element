@@ -1,6 +1,7 @@
-var serverAddress = "http://10.13.41.51:8080/luban-api";
+
+var serverAddress = "http://127.0.0.1:8080";
 //var serverAddress = "http://localhost:9096";
-var videoListUrl = serverAddress + "/api/v1/web/videos/list?";
+var videoListUrl = serverAddress + "/p?";
 var videoEditUrl = serverAddress + "/api/v1/web/videos/edit";
 var videoAddUrl = serverAddress + "/api/v1/web/videos/add";
 var videoDeleteUrl = serverAddress + "/api/v1/videos";

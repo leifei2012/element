@@ -5,76 +5,156 @@
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
     <script src="//unpkg.com/vue/dist/vue.js"></script>
     <!-- 引入样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" rel="external nofollow" >
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- 引入组件库 -->
+    <script src="//unpkg.com/element-ui@2.9.1/lib/index.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 <body>
 <div id="app" class="form">
-    <el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
+    <el-form :model="form" ref="form" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="类型">
+            <el-select v-model="form.reportType" placeholder="请选择类型">
+                <el-option label="每15分钟" value="1"></el-option>
+                <el-option label="每天" value="0"></el-option>
+            </el-select>
+        </el-form-item>
+        <el-form-item label="时间" required>
+            <el-col :span="11">
+                <el-form-item prop="startTime">
+                    <el-date-picker type="date" default-time="12:00:00"   format="yyyy-MM-dd HH:mm" placeholder="开始时间" v-model="form.startTime" style="width: 100%;"></el-date-picker>
+                </el-form-item>
+            </el-col>
+            <el-col class="line" :span="2">-</el-col>
+            <el-col :span="11">
+                <el-form-item prop="endTime">
+                    <el-date-picker type="date" default-time="12:00:00"   format="yyyy-MM-dd HH:mm" placeholder="结束时间" v-model="form.endTime" style="width: 100%;"></el-date-picker>
+                </el-form-item>
+            </el-col>
+        </el-form-item>
             <el-form-item>
-        <span class="demonstration">选择时间</span>
-        <el-date-picker
-                v-model="numberValidateForm.value"
-                type="datetime"
-                format="yyyy-MM-dd HH:mm"
-                @change="getTime"
-                placeholder="选择日期时间"
-                default-time="12:00:00">
-        </el-date-picker>
-            </el-form-item>
-            <el-form-item>
-        <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
-        <el-button @click="resetForm('numberValidateForm')">重置</el-button>
+        <el-button type="primary" @click="submitForm('form')">提交</el-button>
+        <el-button @click="resetForm('form')">重置</el-button>
             </el-form-item>
         </el-form>
     <div class="table">
-        <el-table :data="tableData" style="width: 100%">
-            <el-table-column label="任务" width="180" sortable>
+        <el-table :data="tableData" style="width: 100%" :default-sort = "{prop: 'id', order: 'Ascending'}" >
+            <el-table-column  prop="id" label="id" width="100" sortable>
                 <template slot-scope="scope">
                     <el-popover trigger="hover" placement="top">
                         <p>姓名: {{ scope.row.name }}</p>
                         <div slot="reference" class="name-wrapper">
-                            <el-tag size="medium">{{ scope.row.name }}</el-tag>
+                            <el-tag size="medium">{{ scope.row.id }}</el-tag>
                         </div>
                     </el-popover>
                 </template>
             </el-table-column>
-            <el-table-column label="历时" width="180" sortable>
+            <el-table-column prop="reportTime" label="报告时间" width="180" sortable >
                 <template slot-scope="scope">
                     <i class="el-icon-time"></i>
-                    <span style="margin-left: 10px">{{ scope.row.take }}</span>
+                    <span>{{ scope.row.reportTime }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="时间" width="180" sortable>
+            <el-table-column prop="reportType" label="种类" width="80" sortable>
                 <template slot-scope="scope">
                     <i class="el-icon-time"></i>
-                    <span style="margin-left: 10px">{{ scope.row.Time }}</span>
+                    <span>{{ scope.row.reportType }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="操作">
+            <el-table-column  prop="publishProcessing" label="发布中" width="80" sortable>
                 <template slot-scope="scope">
-                    <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                    <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.publishProcessing }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="publishFailed" label="发布失败" width="80" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.publishFailed }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="auditProcessing" label="音频生产中" width="80" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.auditProcessing }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="releaseProcessing" label="转码中" width="80" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.releaseProcessing }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="releasesFailed" label="转码失败" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.releasesFailed }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="imageProcessing" label="图片生产中" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.imageProcessing }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="imageFailed" label="图片生产失败" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.imageFailed }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="reversePreProcess" label="待反显" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.reversePreProcess }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="reverseProcessing" label="反显中" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.reverseProcessing }}</span>
+                </template>
+            </el-table-column>
+            <el-table-column  prop="reverseFailed" label="反显失败" width="100" sortable>
+                <template slot-scope="scope">
+                    <i class="el-icon-time"></i>
+                    <span>{{ scope.row.reverseFailed }}</span>
                 </template>
             </el-table-column>
         </el-table>
     </div>
     <div class="page">
+        <el-col :span="24" class="toolbar pageBar">
         <el-pagination
                 background
-                layout="prev, pager, next"
-                :total="1000">
+                layout=" prev, pager, next, sizes, total"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+                :page-sizes="[10, 20, 30, 40]"
+                :current-page="page.currentPage"
+                :page-size="page.pageSize"
+                :page-count="page.totalPages">
         </el-pagination>
+        </el-col>
     </div>
 </div>
 <script type="text/javascript">
     new Vue({
         el:'#app',
-        data:{ numberValidateForm: {
-                value: ''},
-             tableData: [],
-              pagenum:""
+        data:{
+            form:{
+                startTime:'',
+                endTime:'',
+                id:'',
+                reportType:'0'
+            },
+            tableData:[],
+            page:{
+                currentPage: 1,
+                pageSize:0,
+                pageNo:0,
+                totalPages:0
+            },
         },
         created: function(){
             this.getTableData()
@@ -89,10 +169,13 @@
                     type : "get",
                     dataType : "json",
                     contentType : "application/json",
-                    url : "/q",
+                    url : "http://127.0.0.1:8089/api/v1/monitor/search",
                     success : function(json) {
-                        alert(json);
-                        self.tableData=json;
+                        self.tableData=json.data.result;
+                        console.log(json.data.totalPages);
+                        self.page.pageSize=json.data.pageSize;
+                        self.page.pageNo=json.data.pageNo;
+                        self.page.totalPages=json.data.totalPages;
                     },
                     error : function(json) {
                         alert("加载失败");
@@ -103,17 +186,20 @@
                 var self = this;  //很重要
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        var str={"time":self.value};
+                        var str={"startTime":self.form.startTime,"endTime":self.form.endTime,"reportType":self.form.reportType};
+                        console.log(str);
                         $.ajax({
                             type : "get",
                             dataType : "json",
                             data: str,
                             contentType : "application/json",
-                            url : "/p",
+                            url : "http://127.0.0.1:8089/api/v1/monitor/search",
                             success : function(json) {
-                                console.log(self.value);
-                                alert(json);
-                                self.tableData=json;
+                                self.tableData=json.data.result;
+                                console.log(self.tableData.length);
+                                self.page.pageSize=json.data.pageSize;
+                                self.page.pageNo=json.data.pageNo;
+                                self.page.totalPages=json.data.totalPages;
                             },
                             error : function(json) {
                                 alert("加载失败");
@@ -127,6 +213,38 @@
             },
             resetForm(formName) {
                 this.$refs[formName].resetFields();
+            },
+            getUser: function () {
+                var self = this;
+                var str={"startTime":self.form.startTime,"endTime":self.form.endTime,"reportType":self.form.reportType,
+                          "pageNo":self.page.pageNo,"pageSize":self.page.pageSize};
+                $.ajax({
+                    type : "get",
+                    dataType : "json",
+                    data: str,
+                    contentType : "application/json",
+                    url : "http://127.0.0.1:8089/api/v1/monitor/search",
+                    success : function(json) {
+                        self.tableData=json.data.result;
+                        console.log(self.tableData);
+                        self.page.pageSize=json.data.pageSize;
+                        self.page.pageNo=json.data.pageNo;
+                        self.page.totalPages=json.data.totalPages;
+                    },
+                    error : function(json) {
+                        alert("加载失败");
+                    }
+                });
+            },
+            //api/v1/monitor/searchageSize改变时
+            handleSizeChange(val) {
+                this.page.pageSize = val;
+                this.getUser();
+            },
+            //currentPage改变时
+            handleCurrentChange(val) {
+                this.page.pageNo = val;
+                this.getUser();
             },
 
             handleEdit(index, row) {
